@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h1 className="bg-danger">hi</h1>
+      <h1 className="mt-5 text-center container">Todolist Using Redux</h1>
     </>
   )
 }
