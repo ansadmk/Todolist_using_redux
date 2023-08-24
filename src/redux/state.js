@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     user:[]
+
 }
 const slice=createSlice({
     name:"user",
@@ -10,7 +11,7 @@ const slice=createSlice({
             const {payload}=action
             console.log(action);
             if (payload) {
-                state.user=[...state.user,payload]
+                state.user=[...state.user,{Data:payload,Edit:false}]
             }
         },
         del:(state,action)=>{
@@ -20,8 +21,20 @@ const slice=createSlice({
                 state.user.splice(payload,1)
                 
             }
+        },
+        edit:(state,action)=>{
+            const {index,data,open}=action.payload
+            if (data) {
+                
+                state.user.splice(index,1,{Data:data,Edit:false})
+            }else if(open=="open"){
+                state.user[index].Edit=true
+
+            }
+
         }
+
     }
 })
-export const {add,del}=slice.actions
+export const {add,del,edit}=slice.actions
 export default slice.reducer
