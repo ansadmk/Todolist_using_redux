@@ -29,7 +29,7 @@ const slice=createSlice({
                 state.user.splice(index,1,{Data:data,Edit:false})
             }else if(open=="open"){
                 state.user[index].Edit=true
-
+         //
             }
 
         }
