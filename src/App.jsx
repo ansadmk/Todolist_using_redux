@@ -3,7 +3,9 @@ import { add ,del,edit} from "./redux/state";
 import { Button,Form } from "react-bootstrap";
 
 function App() {
+  //TODO : called useDispatch for action passing 
   const dispatch = useDispatch();
+  //TODO : called useSelector to get the store object
   const { user } = useSelector((state) => state.user);
    
   const adds= (e)=> {

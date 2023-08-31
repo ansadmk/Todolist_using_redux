@@ -3,10 +3,12 @@ const initialState={
     user:[]
 
 }
+//TODO : STEP 1:Created slice 
 const slice=createSlice({
     name:"user",
     initialState,
     reducers:{
+        //TODO : Created add function
         add:(state,action)=>{
             const {payload}=action
             console.log(action);
@@ -14,6 +16,7 @@ const slice=createSlice({
                 state.user=[...state.user,{Data:payload,Edit:false}]
             }
         },
+        //TODO : Created delete function
         del:(state,action)=>{
             const {payload}=action
             
@@ -22,6 +25,7 @@ const slice=createSlice({
                 
             }
         },
+        //TODO : Created edit function
         edit:(state,action)=>{
             const {index,data,open}=action.payload
             if (data) {
@@ -29,7 +33,7 @@ const slice=createSlice({
                 state.user.splice(index,1,{Data:data,Edit:false})
             }else if(open=="open"){
                 state.user[index].Edit=true
-         //
+         
             }
 
         }
